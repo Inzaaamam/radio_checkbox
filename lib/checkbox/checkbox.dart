@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CheckboxExample extends StatefulWidget {
@@ -18,26 +19,30 @@ class _CheckboxExampleState extends State<CheckboxExample> {
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: true,
       ),
-      body: Center(
-        child: Checkbox(
-          splashRadius: BorderSide.strokeAlignCenter,
-          checkColor: Colors.white,
-          activeColor: Colors.blue,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+      body: Column(
+        children: [
+          Center(
+            child: Checkbox(
+              splashRadius: BorderSide.strokeAlignCenter,
+              checkColor: Colors.white,
+              activeColor: Colors.blue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              side: const BorderSide(
+                color: Colors.red,
+                width: 2,
+              ),
+              // fillColor: WidgetStateProperty.resolveWith(getColor),
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value!;
+                });
+              },
+            ),
           ),
-          side: const BorderSide(
-            color: Colors.red,
-            width: 2,
-          ),
-          // fillColor: WidgetStateProperty.resolveWith(getColor),
-          value: isChecked,
-          onChanged: (bool? value) {
-            setState(() {
-              isChecked = value!;
-            });
-          },
-        ),
+        ],
       ),
     );
   }

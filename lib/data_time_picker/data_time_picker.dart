@@ -15,8 +15,16 @@ class _DataTimeScreenState extends State<DataTimeScreen> {
         Validators.required,
       ],
     ),
-    'time': FormControl<DateTime>(),
-    'dateTime': FormControl<DateTime>(),
+    'time': FormControl<DateTime>(
+      validators: [
+        Validators.required,
+      ],
+    ),
+    'dateTime': FormControl<DateTime>(
+      validators: [
+        Validators.required,
+      ],
+    ),
   });
   @override
   Widget build(BuildContext context) {

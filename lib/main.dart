@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui_practices_app/checkbox/checkbox.dart';
 import 'package:ui_practices_app/data_time_picker/data_time_picker.dart';
+import 'package:ui_practices_app/git_branch_work_here/two.dart';
+
 import 'package:ui_practices_app/radio/radio_screen.dart';
 
 void main() {
@@ -68,7 +70,20 @@ class HomeScren extends StatelessWidget {
                           builder: (context) => const DataTimeScreen()));
                 },
                 child: const Text('DateTime Picker')),
-          )
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TwoBranch()));
+                },
+                child: const Text('Two branch')),
+          ),
         ],
       ),
     );
